@@ -100,4 +100,28 @@ public class VendingMachineTest {
 
 		assertThat(sut.getStock(), is("コーラ：4"));
 	}
+
+	@Test(expected = IllegalStateException.class)
+	public void 在庫が無い状態で買うと例外() throws Exception {
+		// 500円投入
+		sut.recieve(1000);
+		sut.sell("コーラ");
+		sut.sell("コーラ");
+		sut.sell("コーラ");
+		sut.sell("コーラ");
+		sut.sell("コーラ");
+
+		sut.sell("コーラ");
+	}
+
+	@Test
+	public void 在庫全部は買える() throws Exception {
+		// 500円投入
+		sut.recieve(1000);
+		sut.sell("コーラ");
+		sut.sell("コーラ");
+		sut.sell("コーラ");
+		sut.sell("コーラ");
+		sut.sell("コーラ");
+	}
 }

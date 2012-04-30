@@ -36,6 +36,9 @@ public class VendingMachine {
 		if (current <= 120) {
 			throw new IllegalStateException("お金が足りないよ");
 		}
+		if (stock < 1) {
+			throw new IllegalStateException("在庫が足りないよ");
+		}
 		sales += 120;
 		current -= 120;
 		--stock;
