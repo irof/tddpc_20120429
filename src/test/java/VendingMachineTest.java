@@ -41,4 +41,9 @@ public class VendingMachineTest {
 	public void 変なものを突っ込まれたら例外() throws Exception {
 		sut.recieve(123);
 	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void マイナス突っ込まれても例外() throws Exception {
+		sut.recieve(-100);
+	}
 }
