@@ -4,6 +4,7 @@ import java.util.Set;
 public class VendingMachine {
 
 	private long sales;
+	private int current = 0;
 
 	Set<Integer> set = new HashSet<>();
 	{
@@ -14,17 +15,15 @@ public class VendingMachine {
 		set.add(1000);
 	}
 
-	private int temp = 0;
-
-	public int total() {
-		return temp;
+	public int getCurrent() {
+		return current;
 	}
 
 	public void recieve(int i) {
 		if (!set.contains(i)) {
 			throw new IllegalArgumentException("へんなもんいれんじゃね");
 		}
-		temp += i;
+		current += i;
 	}
 
 	public String getStock() {

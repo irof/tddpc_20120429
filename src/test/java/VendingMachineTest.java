@@ -19,7 +19,7 @@ public class VendingMachineTest {
 	public void 百円を受け取る() throws Exception {
 		sut.recieve(100);
 
-		int actual = sut.total();
+		int actual = sut.getCurrent();
 		assertThat(actual, is(100));
 	}
 
@@ -28,13 +28,13 @@ public class VendingMachineTest {
 		sut.recieve(100);
 		sut.recieve(100);
 
-		int actual = sut.total();
+		int actual = sut.getCurrent();
 		assertThat(actual, is(200));
 	}
 
 	@Test
 	public void 合計金額を表示する() throws Exception {
-		int actual = sut.total();
+		int actual = sut.getCurrent();
 		assertThat(actual, is(0));
 	}
 
