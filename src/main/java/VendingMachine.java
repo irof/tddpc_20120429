@@ -28,4 +28,8 @@ public class VendingMachine {
 	public String getStock() {
 		return "コーラ：5";
 	}
+
+	public String sell(String string) {
+		return string;
+	}
 }

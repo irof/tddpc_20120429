@@ -52,4 +52,10 @@ public class VendingMachineTest {
 		String actual = sut.getStock();
 		assertThat(actual, is("コーラ：5"));
 	}
+
+	@Test
+	public void コーラを売る() throws Exception {
+		String actual = sut.sell("コーラ");
+		assertThat(actual, is("コーラ"));
+	}
 }
