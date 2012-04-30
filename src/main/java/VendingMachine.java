@@ -31,6 +31,9 @@ public class VendingMachine {
 	}
 
 	public String sell(String string) {
+		if (current <= 120) {
+			throw new IllegalStateException("お金が足りないよ");
+		}
 		sales += 120;
 		current -= 120;
 		return string;
