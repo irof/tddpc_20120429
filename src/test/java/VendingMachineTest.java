@@ -46,4 +46,10 @@ public class VendingMachineTest {
 	public void マイナス突っ込まれても例外() throws Exception {
 		sut.recieve(-100);
 	}
+
+	@Test
+	public void 在庫数を表示する() throws Exception {
+		String actual = sut.getStock();
+		assertThat(actual, is("コーラ：5"));
+	}
 }

@@ -24,4 +24,8 @@ public class VendingMachine {
 		}
 		temp += i;
 	}
+
+	public String getStock() {
+		return "コーラ：5";
+	}
 }
