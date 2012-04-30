@@ -36,4 +36,9 @@ public class VendingMachineTest {
 		int actual = sut.total();
 		assertThat(actual, is(0));
 	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void 変なものを突っ込まれたら例外() throws Exception {
+		sut.recieve(123);
+	}
 }
