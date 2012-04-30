@@ -91,4 +91,13 @@ public class VendingMachineTest {
 
 		assertThat(sut.getSales(), is(120L));
 	}
+
+	@Test
+	public void 買ったら在庫が減る() throws Exception {
+		// 500円投入
+		sut.recieve(500);
+		sut.sell("コーラ");
+
+		assertThat(sut.getStock(), is("コーラ：4"));
+	}
 }

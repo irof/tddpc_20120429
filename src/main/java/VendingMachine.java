@@ -6,6 +6,8 @@ public class VendingMachine {
 	private long sales;
 	private int current = 0;
 
+	private int stock = 5;
+
 	Set<Integer> set = new HashSet<>();
 	{
 		set.add(10);
@@ -27,7 +29,7 @@ public class VendingMachine {
 	}
 
 	public String getStock() {
-		return "コーラ：5";
+		return String.format("コーラ：%d", stock);
 	}
 
 	public String sell(String string) {
@@ -36,6 +38,7 @@ public class VendingMachine {
 		}
 		sales += 120;
 		current -= 120;
+		--stock;
 		return string;
 	}
 
