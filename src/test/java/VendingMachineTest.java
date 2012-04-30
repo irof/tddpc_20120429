@@ -5,13 +5,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-public class VenderMachineTest {
+public class VendingMachineTest {
 
-	VenderMachine sut;
+	VendingMachine sut;
 
 	@Before
 	public void setUp() {
-		sut = new VenderMachine();
+		sut = new VendingMachine();
 	}
 
 	@Test

@@ -1,5 +1,5 @@
 
-public class VenderMachine {
+public class VendingMachine {
 
 	public int total() {
 		return temp;
