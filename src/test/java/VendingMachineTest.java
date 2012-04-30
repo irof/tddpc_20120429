@@ -1,6 +1,7 @@
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
+import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -62,5 +63,14 @@ public class VendingMachineTest {
 	@Test
 	public void 売り上げ金額を表示する() throws Exception {
 		assertThat(sut.getSales(), is(0L));
+	}
+
+	@Test
+	public void コーラを売ったら売り上げが増える() throws Exception {
+		Assume.assumeThat(sut.getSales(), is(0L));
+
+		sut.sell("コーラ");
+
+		assertThat(sut.getSales(), is(120L));
 	}
 }

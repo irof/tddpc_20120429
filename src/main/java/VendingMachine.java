@@ -32,6 +32,7 @@ public class VendingMachine {
 	}
 
 	public String sell(String string) {
+		sales += 120;
 		return string;
 	}
 
