@@ -66,6 +66,15 @@ public class VendingMachineTest {
 	}
 
 	@Test
+	public void コーラを売ったら現在金額が減る() throws Exception {
+		// 500円投入
+		sut.recieve(500);
+
+		sut.sell("コーラ");
+		assertThat(sut.getCurrent(), is(380));
+	}
+
+	@Test
 	public void コーラを売ったら売り上げが増える() throws Exception {
 		Assume.assumeThat(sut.getSales(), is(0L));
 
