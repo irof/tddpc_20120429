@@ -3,6 +3,8 @@ import java.util.Set;
 
 public class VendingMachine {
 
+	private long sales;
+
 	Set<Integer> set = new HashSet<>();
 	{
 		set.add(10);
@@ -31,5 +33,9 @@ public class VendingMachine {
 
 	public String sell(String string) {
 		return string;
+	}
+
+	public long getSales() {
+		return sales;
 	}
 }

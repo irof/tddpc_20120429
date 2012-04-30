@@ -58,4 +58,9 @@ public class VendingMachineTest {
 		String actual = sut.sell("コーラ");
 		assertThat(actual, is("コーラ"));
 	}
+
+	@Test
+	public void 売り上げ金額を表示する() throws Exception {
+		assertThat(sut.getSales(), is(0L));
+	}
 }
